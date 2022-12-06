@@ -1,0 +1,81 @@
+{
+  "id": "da0fa81d-e371-458f-a5ab-d03353c3eb89",
+  "version": "2.0",
+  "name": "Maplife",
+  "url": "http://localhost:8081",
+  "tests": [{
+    "id": "08a84ac9-e58e-4f5b-b6f7-3556063bcba9",
+    "name": "click-marker-and-go-to-profile",
+    "commands": [{
+      "id": "ad785539-7c26-4c9b-88d0-65d5dd73c9a3",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0ebec680-1dde-4870-a3df-ebb30017f2e8",
+      "comment": "",
+      "command": "click",
+      "target": "id=custom-div-icon",
+      "targets": [
+        ["id=custom-div-icon", "id"],
+        ["css=#custom-div-icon", "css:finder"],
+        ["xpath=//img[@id='custom-div-icon']", "xpath:attributes"],
+        ["xpath=//div[@id='map']/div/div[4]/div[2]/div/img", "xpath:idRelative"],
+        ["xpath=//div[2]/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ee29fb0e-fbbf-44b2-98f5-0f378c253bf3",
+      "comment": "",
+      "command": "storeText",
+      "target": "id=host-name",
+      "targets": [
+        ["id=host-name", "id"],
+        ["css=#host-name", "css:finder"],
+        ["xpath=//div[@id='host-name']", "xpath:attributes"],
+        ["xpath=//div[@id='map']/div/div[6]/div/div/div/a/div[3]", "xpath:idRelative"],
+        ["xpath=//a/div[3]", "xpath:position"]
+      ],
+      "value": "hostName"
+    }, {
+      "id": "20f9247d-1cbd-458d-88c0-bc4b26a17c1e",
+      "comment": "",
+      "command": "click",
+      "target": "id=event-img-container",
+      "targets": [
+        ["id=event-img-container", "id"],
+        ["css=#event-img-container", "css:finder"],
+        ["xpath=//div[@id='event-img-container']", "xpath:attributes"],
+        ["xpath=//div[@id='map']/div/div[6]/div/div/div/a/div", "xpath:idRelative"],
+        ["xpath=//div[6]/div/div/div/a/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d69a5f55-b5a1-4d6f-aeb3-1b4e892f741d",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=profileUsername",
+      "targets": [
+        ["id=profileUsername", "id"],
+        ["css=#profileUsername", "css:finder"],
+        ["xpath=//label[@id='profileUsername']", "xpath:attributes"],
+        ["xpath=//div[@id='profile-page']/div/div[2]/div/div/label", "xpath:idRelative"],
+        ["xpath=//label", "xpath:position"],
+        ["xpath=//label[contains(.,'yanguo')]", "xpath:innerText"]
+      ],
+      "value": "${hostName}"
+    }]
+  }],
+  "suites": [{
+    "id": "ab09f4fa-6653-4e63-a034-6187a328cd64",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["08a84ac9-e58e-4f5b-b6f7-3556063bcba9"]
+  }],
+  "urls": ["http://localhost:8081/"],
+  "plugins": []
+}

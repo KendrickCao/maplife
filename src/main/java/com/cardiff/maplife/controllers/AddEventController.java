@@ -55,12 +55,12 @@ public class AddEventController {
     @Autowired
     TwilioService twilioService;
 
-    @GetMapping("/addevents")
+    @RequestMapping("/addevents")
     public ModelAndView showForm(ModelAndView modelAndView, @ModelAttribute("events") Event event, Model model, @RequestParam(value = "image", required = false) MultipartFile file, @AuthenticationPrincipal User user, HttpSession session, RedirectAttributes redirAttrs, BindingResult result) throws IOException, NullPointerException{
         LocalDate now = LocalDate.now();
         model.addAttribute(now);
 
-        modelAndView = new ModelAndView("/events/addevents");
+        modelAndView = new ModelAndView("events/addevents");
         return modelAndView;
     }
 
@@ -140,7 +140,7 @@ public class AddEventController {
 
 				Event savedEvent = eventService.save(event);
 
-				String uploadDir = "event/" + savedEvent.getId();
+				String uploadDir = "event/";
 				EventFileUploadUtil.saveFile(uploadDir, fileName, file);
 
 
@@ -169,7 +169,7 @@ public class AddEventController {
 				fileName = StringUtils.cleanPath(file.getOriginalFilename()); //get the acrual file name
 				event.setEventImageName(fileName);
 				Event savedEvent = eventService.save(event);
-				String uploadDir = "event/" + savedEvent.getId();
+				String uploadDir = "event/";
 				EventFileUploadUtil.saveFile(uploadDir, fileName, file);
 
 

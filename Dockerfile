@@ -12,6 +12,9 @@ FROM base as build
 RUN mvn package
 
 FROM maven:3.8-eclipse-temurin-11-alpine as production
+WORKDIR /maplife
 EXPOSE 8080
-COPY --from=build /app/target/Maplife-*.jar /maplife.jar
-CMD ["java", "-jar", "/maplife.jar"]
+COPY --from=build /app/target/Maplife-*.jar /maplife/maplife.jar
+COPY --from=base /app/src/main/resources/static/image /maplife/image
+COPY --from=base /app/src/main/resources/static/image /maplife/event
+CMD ["java", "-jar", "/maplife/maplife.jar"]

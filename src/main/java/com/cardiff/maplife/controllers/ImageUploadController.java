@@ -44,7 +44,7 @@ public class ImageUploadController {
         }
 
         //Method body to execute if everything is okay and good to upload
-        String uploadDir = "src/main/resources/static/image";
+        String uploadDir = "image";
         try {
             Files.copy(image.getInputStream(), Paths.get(uploadDir + File.separator + image.getOriginalFilename()), StandardCopyOption.REPLACE_EXISTING);
             String usernameFromUser = userService.getAuthentication();

@@ -39,9 +39,6 @@ public class User implements UserDetails, Serializable {
     @Column(name = "userType")
     private boolean userType;
 
-    @Column(name = "coins")
-    private int coins;
-
     @Column(name = "views")
     private int views;
 
@@ -103,13 +100,13 @@ public class User implements UserDetails, Serializable {
 
     }
 
-    public User(Long user_id, String username, String password, String email, boolean userType, int coins, int views, String icon, String roles, String video, String bio, List<Event> eventList, Set<User> followerUserSet, Set<User> followingUserSet, List<GrantedAuthority> authorities) {
+    public User(Long user_id, String username, String password, String email, boolean userType, int coin, int views, String icon, String roles, String video, String bio, List<Event> eventList, Set<User> followerUserSet, Set<User> followingUserSet, List<GrantedAuthority> authorities) {
         this.user_id = user_id;
         this.username = username;
         this.password = password;
         this.email = email;
         this.userType = userType;
-        this.coins = coins;
+        this.coin = coin;
         this.views = views;
         this.icon = icon;
         this.roles = roles;
@@ -178,14 +175,6 @@ public class User implements UserDetails, Serializable {
 
     public void setUserType(boolean userType) {
         this.userType = userType;
-    }
-
-    public int getCoins() {
-        return coins;
-    }
-
-    public void setCoins(int coins) {
-        this.coins = coins;
     }
 
     public int getViews() {

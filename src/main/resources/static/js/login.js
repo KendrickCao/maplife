@@ -12,7 +12,6 @@ let signupConfirmPassword=null;
 let signupEmail=null;
 let headerButton=''
 let loginFail=null;
-
 // let headerButton = GetQueryString("button")
 let tabLoginButton =document.getElementById("login-a")
 let tabSignupButton =document.getElementById("signup-a")
@@ -25,7 +24,10 @@ window.onload = function (){
     document.getElementById("signupEmail").value="";
     showLoginbox()
 }
-
+function demoLogin(){
+    usernameInput.value="yanguo"
+    passwordInput.value="12345678"
+}
 function GetQueryString(name) {
     let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
     let r = window.location.search.substr(1).match(reg); // get the parameters behind ?
@@ -196,10 +198,12 @@ const passwordInputForS=document.getElementById("signupPassword");
 const confirmPasswordInputForS=document.getElementById("signupConfirmPassword");
 const emailInputForS=document.getElementById("signupEmail");
 const signupButton = document.getElementById("signupBtn");
+const demoLoginBtn=document.getElementById("demoLoginBtn")
 
 usernameInput.addEventListener("change", captureUserInput);
 passwordInput.addEventListener("change", captureUserInput);
 // loginButton.addEventListener("click", loginUser);
+demoLoginBtn.addEventListener("click", demoLogin);
 usernameInputForS.addEventListener("change", captureUserInputForS)
 passwordInputForS.addEventListener("change", captureUserInputForS)
 confirmPasswordInputForS.addEventListener("change", captureUserInputForS)

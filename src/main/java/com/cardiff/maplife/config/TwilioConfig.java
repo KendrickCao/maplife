@@ -9,11 +9,11 @@ import java.util.Arrays;
 @Configuration
 @ConfigurationProperties("twilio")
 public class TwilioConfig {
-    private static final String account_SID = "AC4f1b3c945710a74853766fd59071a9aa";
-    private static final String api_key = "SKc71b0b7e0d4d55f484a15a5467de4263";
-    private static final String api_secret = "KZ8gLRjbBLQai82qIZUiQdT0MzCy9oeU";
-    private static final String token ="32378018f4a80f106e6f4a2727b9066b";
-    private static final String chat_service_SID = "IS1beb7d04173e4857a86014b05e50bb0b";
+    private static final String account_SID = "AC9ae823ff5ee8a94680970b9fa9a72525";
+    private static final String api_key = "SK2d1ac24d8326384f3852177c71c5db2e";
+    private static final String api_secret = "h2GJuQJiolGdH9R7rh9oOTWAhrp36mf3";
+    private static final String token ="d04dd2cc2e5ae13e297ba365cda9f8ab";
+    private static final String chat_service_SID = "IS78808bd2d6294dc6a60c4c504f20e42b";
     public TwilioConfig() {
     }
 

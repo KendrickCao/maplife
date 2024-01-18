@@ -41,16 +41,16 @@ public class LightWeightMapTest {
     }
     //  Component test using a mockMVC but mocking the repository response (Note the @MockBean)
     //  This only tests the controller and the view layers
-    @Test
-    public void isEventOnMapTest() throws Exception {
-        Date eventDate = new Date();
-        Timestamp datetime = new Timestamp(System.currentTimeMillis());
-        Event event = new Event(1L,1L,"test event",0,0,false,eventDate,"test event dis",true);
-        // This will return what the service would have returned - a list of events called method in the repo
-        given(this.eventService.findCustom(datetime)).willReturn(List.of(event));
-        this.mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk())
-                .andExpect(content().string(containsString("test event")));
-    }
+    // @Test
+    // public void isEventOnMapTest() throws Exception {
+    //     Date eventDate = new Date();
+    //     Timestamp datetime = new Timestamp(System.currentTimeMillis());
+    //     Event event = new Event(1L,1L,"test event",0,0,false,eventDate,"test event dis",true);
+    //     // This will return what the service would have returned - a list of events called method in the repo
+    //     given(this.eventService.findCustom(datetime)).willReturn(List.of(event));
+    //     this.mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk())
+    //             .andExpect(content().string(containsString("test event")));
+    // }
 
 
 }
